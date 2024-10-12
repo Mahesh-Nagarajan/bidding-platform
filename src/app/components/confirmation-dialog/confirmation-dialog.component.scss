@@ -1,0 +1,41 @@
+/* confirmation-dialog.component.scss */
+
+/* Ensure the dialog box has square edges */
+.mat-dialog-container {
+    border-radius: 0 !important;
+    /* Remove rounded corners */
+    max-width: 400px;
+    /* Set a maximum width for the dialog */
+    width: 100%;
+    /* Ensure it occupies full width if needed */
+}
+
+/* Style for the confirmation dialog content */
+.confirmation-dialog {
+    display: flex;
+    flex-direction: column;
+    /* Stack content vertically */
+    max-height: 300px;
+    /* Set a maximum height for the dialog */
+}
+
+/* Content area with fixed height and scrolling */
+.dialog-content {
+    flex: 1;
+    /* Allow this section to take up available space */
+    overflow-y: auto;
+    /* Enable vertical scrolling if content exceeds height */
+    padding: 20px;
+    /* Add padding for better spacing */
+}
+
+/* Style the action buttons */
+.mat-dialog-actions {
+    justify-content: center;
+    /* Center the buttons */
+}
+
+button {
+    margin-left: 10px;
+    /* Add some space between buttons */
+}

@@ -1,0 +1,59 @@
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h4 class="text-center">Bidder Dashboard</h4>
+            <button class="btn btn-danger btn-sm" (click)="logout()">Logout</button> <!-- Logout Button -->
+        </div>
+        <hr>
+
+        <!-- Left Column: Available Auctions to Bid -->
+        <div class="col-md-6 col-12 mb-3">
+            <h5 class="text-center mb-3">Available Auctions</h5>
+            <div class="card p-3 shadow-sm">
+                <ul class="list-group">
+                    <ng-container *ngIf="auctions.length > 0; else noDataTemplate">
+                        <li class="list-group-item d-flex justify-content-between align-items-center"
+                            *ngFor="let auction of auctions">
+                            <div>
+                                <strong>{{ auction.name }}</strong> - Current Bid: {{ auction.currentBid }}
+                            </div>
+                            <div>
+                                <button class="btn btn-primary btn-sm" (click)="placeBid(auction)">Place Bid</button>
+                            </div>
+                        </li>
+                    </ng-container>
+                    <ng-template #noDataTemplate>
+                        <li class="list-group-item text-center">
+                            No auctions available at the moment.
+                        </li>
+                    </ng-template>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Right Column: Bid History -->
+        <div class="col-md-6 col-12 mb-3">
+            <h5 class="text-center mb-3">Bid History</h5>
+            <div class="card p-3 shadow-sm">
+                <ul class="list-group">
+                    <ng-container *ngIf="bidHistory.length > 0; else noHistoryTemplate">
+                        <li class="list-group-item d-flex justify-content-between align-items-center"
+                            *ngFor="let bid of bidHistory">
+                            <div>
+                                <strong>Bidder ID: {{ bid.bidderId }}</strong> - Your Bid: {{ bid.amount }}
+                            </div>
+                            <div>
+                                <span class="text-muted">{{ bid.timestamp | date: 'short' }}</span>
+                            </div>
+                        </li>
+                    </ng-container>
+                    <ng-template #noHistoryTemplate>
+                        <li class="list-group-item text-center">
+                            You haven't placed any bids yet.
+                        </li>
+                    </ng-template>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

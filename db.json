@@ -1,0 +1,120 @@
+{
+    "auctions": [
+        {
+            "id": 1,
+            "name": "Antique Flower Vase",
+            "description": "A beautifully crafted antique flower vase, perfect for home decor.",
+            "startingBid": 50,
+            "currentBid": 100,
+            "bidHistory": [
+                {
+                    "bidderId": 101,
+                    "bidAmount": 60,
+                    "timestamp": "2024-10-08T12:30:00Z"
+                },
+                {
+                    "bidderId": 102,
+                    "bidAmount": 80,
+                    "timestamp": "2024-10-08T12:45:00Z"
+                },
+                {
+                    "bidderId": 103,
+                    
+                    "bidAmount": 100,
+                    "timestamp": "2024-10-08T13:00:00Z"
+                }
+            ],
+            "sellerId": 1,
+            "isFinalized": false,
+            "status": "active"
+        },
+        {
+            "id": 2,
+            "name": "Vintage Car Model",
+            "description": "A classic die-cast model of a vintage car, collectible item.",
+            "startingBid": 200,
+            "currentBid": 250,
+            "bidHistory": [
+                {
+                    "bidderId": 104,
+                    "bidAmount": 220,
+                    "timestamp": "2024-10-08T14:00:00Z"
+                },
+                {
+                    "bidderId": 105,
+                    "bidAmount": 250,
+                    "timestamp": "2024-10-08T14:20:00Z"
+                }
+            ],
+            "sellerId": 2,
+            "isFinalized": false,
+            "status": "active"
+        },
+        {
+            "id": 3,
+            "name": "Modern Art Painting",
+            "description": "A large abstract painting by a renowned artist, perfect for living rooms.",
+            "startingBid": 300,
+            "currentBid": 350,
+            "bidHistory": [
+                {
+                    "bidderId": 106,
+                    "bidAmount": 320,
+                    "timestamp": "2024-10-08T15:30:00Z"
+                },
+                {
+                    "bidderId": 107,
+                    "bidAmount": 350,
+                    "timestamp": "2024-10-08T16:00:00Z"
+                }
+            ],
+            "sellerId": 3,
+            "isFinalized": false,
+            "status": "active"
+        },
+        {
+            "id": 4,
+            "name": "Leather Jacket",
+            "description": "Premium quality leather jacket, limited edition.",
+            "startingBid": 150,
+            "currentBid": 200,
+            "bidHistory": [
+                {
+                    "bidderId": 108,
+                    "bidAmount": 180,
+                    "timestamp": "2024-10-08T17:00:00Z"
+                },
+                {
+                    "bidderId": 109,
+                    "bidAmount": 200,
+                    "timestamp": "2024-10-08T17:30:00Z"
+                }
+            ],
+            "sellerId": 4,
+            "isFinalized": false,
+            "status": "active"
+        },
+        {
+            "id": 5,
+            "name": "Antique Pocket Watch",
+            "description": "A vintage pocket watch from the 19th century, fully functional.",
+            "startingBid": 500,
+            "currentBid": 600,
+            "bidHistory": [
+                {
+                    "bidderId": 110,
+                    "bidAmount": 550,
+                    "timestamp": "2024-10-08T18:00:00Z"
+                },
+                {
+                    "bidderId": 111,
+                    "bidAmount": 600,
+                    "timestamp": "2024-10-08T18:30:00Z"
+                }
+            ],
+            "sellerId": 5,
+            "isFinalized": false,
+            "status": "active"
+        }
+    ]
+}

@@ -1,0 +1,88 @@
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h4 class="text-center">Seller Dashboard</h4>
+            <button class="btn btn-danger btn-sm" (click)="logout()">Logout</button> <!-- Logout Button -->
+        </div>
+        <hr>
+
+        <!-- Left Column: Create New Auction -->
+        <div class="col-md-6 col-12 mb-3">
+            <!-- Form to create a new auction -->
+            <form #auctionForm="ngForm" (ngSubmit)="createAuction(auctionForm)" novalidate>
+                <div class="card p-4 shadow-sm">
+                    <h5 class="mb-2">Create New Auction</h5>
+                    <hr>
+
+                    <!-- Item Name -->
+                    <div class="mb-2">
+                        <label for="name" class="form-label">Item Name</label>
+                        <input type="text" [(ngModel)]="newAuction.name" name="name" id="name"
+                            placeholder="Enter Item Name" required class="form-control" #name="ngModel">
+                        <div *ngIf="name.invalid && name.touched" class="text-danger">Item Name is required.</div>
+                    </div>
+
+                    <!-- Item Description -->
+                    <div class="mb-2">
+                        <label for="description" class="form-label">Item Description</label>
+                        <textarea [(ngModel)]="newAuction.description" name="description" id="description"
+                            placeholder="Enter Item Description" required class="form-control"
+                            #description="ngModel"></textarea>
+                        <div *ngIf="description.invalid && description.touched" class="text-danger">Item Description is
+                            required.</div>
+                    </div>
+
+                    <!-- Starting Bid -->
+                    <div class="mb-2">
+                        <label for="startingBid" class="form-label">Starting Bid</label>
+                        <input type="number" [(ngModel)]="newAuction.startingBid" name="startingBid" id="startingBid"
+                            placeholder="Enter Starting Bid" required class="form-control" #startingBid="ngModel">
+                        <div *ngIf="startingBid.invalid && startingBid.touched" class="text-danger">Starting Bid is
+                            required.</div>
+                    </div>
+
+                    <!-- Seller ID -->
+                    <div class="mb-2">
+                        <label for="sellerId" class="form-label">Seller ID</label>
+                        <input type="number" [(ngModel)]="newAuction.sellerId" name="sellerId" id="sellerId"
+                            placeholder="Enter Seller ID" required class="form-control" #sellerId="ngModel">
+                        <div *ngIf="sellerId.invalid && sellerId.touched" class="text-danger">Seller ID is required.
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button class="btn btn-success w-100 btn-sm" type="submit" [disabled]="auctionForm.invalid">Create
+                        Auction</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Right Column: Active Auctions -->
+        <div class="col-md-6 col-12 mb-3">
+            <h5 class="text-center mb-3">Active Auctions</h5>
+            <div class="card p-3 shadow-sm">
+                <ul class="list-group">
+                    <ng-container *ngIf="auctions.length > 0; else noDataTemplate">
+                        <li class="list-group-item d-flex justify-content-between align-items-center"
+                            *ngFor="let auction of auctions">
+                            <div>
+                                <strong>{{ auction.name }}</strong> - Current Bid: {{ auction.currentBid }}
+                            </div>
+                            <div>
+                                <button class="btn btn-primary btn-sm me-1" (click)="finalizeAuction(auction)">Finalize
+                                </button>
+
+                                <button class="btn btn-danger btn-sm" (click)="cancelAuction(auction)">Cancel</button>
+                            </div>
+                        </li>
+                    </ng-container>
+                    <ng-template #noDataTemplate>
+                        <li class="list-group-item text-center">
+                            No data found.
+                        </li>
+                    </ng-template>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+.full-page {
+    height: 100vh;
+    background-color: #808080;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('asserts/image/auction-website.jpg');
+}
+
+.login-card {
+    width: 100%;
+    max-width: 400px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.login-card h3 {
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.form-label {
+    font-weight: 500;
+    color: #333;
+}
+
+.form-select,
+.btn {
+    height: 45px;
+    font-size: 16px;
+}
+
+.btn-primary {
+    font-weight: bold;
+}

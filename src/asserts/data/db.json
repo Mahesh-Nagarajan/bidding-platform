@@ -1,0 +1,20 @@
+{
+    "auctions": [
+        {
+            "id": 1,
+            "name": "Laptop",
+            "startingBid": 500,
+            "currentBid": 500,
+            "bidHistory": [],
+            "finalized": false
+        },
+        {
+            "id": 2,
+            "name": "Phone",
+            "startingBid": 300,
+            "currentBid": 300,
+            "bidHistory": [],
+            "finalized": false
+        }
+    ]
+}
